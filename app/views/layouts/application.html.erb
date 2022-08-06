@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+ <html>
   <head>
     <title>ShukuhakuApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,7 +17,6 @@
      </div>
     <% end %>
 
-
     <% if flash[:alert] %>
       <div class="notification is-danger">
        <p class="alert"><%= alert %></p>
@@ -27,4 +26,6 @@
     <%= link_to root_path, class: "navbar-item" do %>
      <h1 class="title is-4" style="font-family: cursive;">Pote Share</h1>
     <% end %>
-</html>
+
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
+ </html>
