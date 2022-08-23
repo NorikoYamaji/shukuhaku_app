@@ -24,13 +24,17 @@
       </div>
     <% end %>
 
+ <div class="header">
   <nav class="navbar is-warning">
-    <div class="navbar-brand">
+   <div class="navbar-brand">
       <%= link_to root_path, class: "navbar-item" do %>
        <h1 class="title is-4" style="font-family: cursive;">Pote Share</h1>
       <% end %>
       <%= form_with url: rooms_sarch_path, method: :get do |f| %>
       <%= f.text_field :room_address, class: "header-input", placeholder: "エリア" %>
+       <i class="fa-solid fa-location-dot"></i>
+      <%= f.text_field :keyword, class: "header-input", placeholder: "キーワード" %>
+      <%= f.submit :search, class: "hidden-btn" , :name => nil %>
       <% end %>
 
       <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
@@ -66,6 +70,11 @@
     </div>
    <% end %>
   </nav>
+ </div>
     <%= yield %>
   </body>
  </html>
+
+<footer class="footer">
+ <p>2022 POTEPAN.INK.</p>
+</footer>
